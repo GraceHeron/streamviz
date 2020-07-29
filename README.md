@@ -15,6 +15,73 @@ library(ggrepel)
 library(SSN)
 ```
 
+## Maleny Streams
+
+Maleny’s Obi-Obi Creek, Australia streams with observation sites.
+
+``` r
+sites <- readOGR("gisdata/maleny","sites")
+```
+
+    ## Warning in OGRSpatialRef(dsn, layer, morphFromESRI = morphFromESRI, dumpSRS =
+    ## dumpSRS, : Discarded datum Geocentric_Datum_of_Australia_1994 in CRS definition:
+    ## +proj=aea +lat_0=0 +lon_0=153 +lat_1=-20 +lat_2=-40 +x_0=0 +y_0=0 +ellps=GRS80
+    ## +units=m +no_defs
+
+    ## OGR data source with driver: ESRI Shapefile 
+    ## Source: "C:\spmodels\streamviz\gisdata\maleny", layer: "sites"
+    ## with 28 features
+    ## It has 5 fields
+
+``` r
+streams <- readOGR("gisdata/maleny","streams")
+```
+
+    ## Warning in OGRSpatialRef(dsn, layer, morphFromESRI = morphFromESRI, dumpSRS =
+    ## dumpSRS, : Discarded datum Geocentric_Datum_of_Australia_1994 in CRS definition:
+    ## +proj=aea +lat_0=0 +lon_0=153 +lat_1=-20 +lat_2=-40 +x_0=0 +y_0=0 +ellps=GRS80
+    ## +units=m +no_defs
+
+    ## OGR data source with driver: ESRI Shapefile 
+    ## Source: "C:\spmodels\streamviz\gisdata\maleny", layer: "streams"
+    ## with 150 features
+    ## It has 40 fields
+    ## Integer64 fields read as strings:  HydroID AHGFFType AusHydroID AusHydroEr SegmentNo DrainID From_Node To_Node NextDownID Enabled FlowDir SrcType SourceID PlanAcc Symbol ConCatID StrOutlet rid netID
+
+### Doing the most with the least
+
+Stream network where the width is proportional to some downstream
+accumulative value.
+
+``` r
+ggplot() +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "lightskyblue") +
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+### Streams with sites
+
+Add some observation sites. I am a “hotpink” stan (don’t come for me).
+
+``` r
+ggplot() +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "lightskyblue") +
+  layer_spatial(sites, colour = "hotpink")+
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 ## Yankee-Fork Streams
 
 Yankee-Fork, USA streams with sites, prediction sites and watershed
@@ -75,7 +142,7 @@ ggplot() +
   theme_classic()
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### Watershed study area with observation sites
 
@@ -102,6 +169,4 @@ ggplot() +
         axis.text.y = element_text())
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
-
-## Maleny Streams
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->

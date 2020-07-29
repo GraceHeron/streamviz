@@ -22,6 +22,46 @@ library(ggrepel)
 library(SSN)
 ```
 
+## Maleny Streams 
+
+Maleny's Obi-Obi Creek, Australia streams with observation sites.
+
+```{r, message = FALSE}
+sites <- readOGR("gisdata/maleny","sites")
+streams <- readOGR("gisdata/maleny","streams")
+```
+
+### Doing the most with the least
+
+Stream network where the width is proportional to some downstream accumulative value. 
+
+```{r}
+ggplot() +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "lightskyblue") +
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
+
+### Streams with sites
+
+Add some observation sites. I am a "hotpink" stan (don't come for me).
+
+```{r}
+ggplot() +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "lightskyblue") +
+  layer_spatial(sites, colour = "hotpink")+
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
+
+
+
 
 ## Yankee-Fork Streams
 
@@ -72,6 +112,4 @@ ggplot() +
         axis.title.x=element_blank(),
         axis.text.y = element_text())
 ```
-
-## Maleny Streams 
 
