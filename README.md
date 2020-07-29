@@ -107,7 +107,16 @@ ggplot() +
 Digital elevation models (dem.tif) layer.
 
 ``` r
-plot(dem)
+ggplot() +
+  geom_tile(data = as.data.frame(rasterToPoints(dem)), 
+            aes(x=x,y=y,fill=dem)) +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "white") +
+  scale_fill_viridis_c() +
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
@@ -116,13 +125,16 @@ Catchments/watersheds (catchment.shp). We love ugly colour palettes.
 
 ``` r
 ggplot() +
-  layer_spatial(catchment, fill = "aquamarine", colour = "coral", size = 1.5) +
+   geom_tile(data = as.data.frame(rasterToPoints(dem)), 
+            aes(x=x,y=y,fill=dem)) +
   layer_spatial(streams, 
                 aes(size = AreaAFV), 
-                colour = "navy") +
+                colour = "white") +
+  layer_spatial(catchment, fill = NA, colour = "hotpink") +
   layer_spatial(sites, colour = "hotpink")+
   coord_sf() + 
   scale_size(range = c(0, 2), guide = FALSE) +
+  scale_fill_viridis_c() +
   theme_classic()
 ```
 
