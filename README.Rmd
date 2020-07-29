@@ -11,15 +11,13 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Reference for some nice streams (subjective). Everything works for R4.0.2 and proj6. Important packages:
+Reference for some nice streams (subjective) using ggplot2. Everything works for R4.0.2 and proj6. Important packages:
 
 ```{r pkg, message = FALSE}
-library(rgdal)
-library(raster)
-library(tidyverse)
-library(ggspatial)
-library(ggrepel)
-library(SSN)
+library(rgdal) # For shapefiles etc
+library(tidyverse) # For ggplot2 and other pkgs
+library(ggspatial) # For spatial plotting
+library(raster) # For raster handling
 ```
 
 ## Maleny Streams 
@@ -29,6 +27,8 @@ Maleny's Obi-Obi Creek, Australia streams with observation sites.
 ```{r, message = FALSE}
 sites <- readOGR("gisdata/maleny","sites")
 streams <- readOGR("gisdata/maleny","streams")
+catchment <- readOGR("gisdata/maleny","catchment")
+dem <- raster("gisdata/maleny/dem.tif")
 ```
 
 ### Doing the most with the least
@@ -60,8 +60,27 @@ ggplot() +
   theme_classic()
 ```
 
+### Other spatial layers
 
+Digital elevation models (dem.tif) layer.
 
+```{r}
+plot(dem)
+```
+
+Catchments/watersheds (catchment.shp). We love ugly colour palettes.
+
+```{r}
+ggplot() +
+  layer_spatial(catchment, fill = "aquamarine", colour = "coral", size = 1.5) +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "navy") +
+  layer_spatial(sites, colour = "hotpink")+
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
 
 ## Yankee-Fork Streams
 

@@ -3,16 +3,14 @@ Stream Visualisation
 Grace Heron
 29/07/2020
 
-Reference for some nice streams (subjective). Everything works for
-R4.0.2 and proj6. Important packages:
+Reference for some nice streams (subjective) using ggplot2. Everything
+works for R4.0.2 and proj6. Important packages:
 
 ``` r
-library(rgdal)
-library(raster)
-library(tidyverse)
-library(ggspatial)
-library(ggrepel)
-library(SSN)
+library(rgdal) # For shapefiles etc
+library(tidyverse) # For ggplot2 and other pkgs
+library(ggspatial) # For spatial plotting
+library(raster) # For raster handling
 ```
 
 ## Maleny Streams
@@ -48,6 +46,28 @@ streams <- readOGR("gisdata/maleny","streams")
     ## It has 40 fields
     ## Integer64 fields read as strings:  HydroID AHGFFType AusHydroID AusHydroEr SegmentNo DrainID From_Node To_Node NextDownID Enabled FlowDir SrcType SourceID PlanAcc Symbol ConCatID StrOutlet rid netID
 
+``` r
+catchment <- readOGR("gisdata/maleny","catchment")
+```
+
+    ## Warning in OGRSpatialRef(dsn, layer, morphFromESRI = morphFromESRI, dumpSRS =
+    ## dumpSRS, : Discarded datum Geocentric_Datum_of_Australia_1994 in CRS definition:
+    ## +proj=aea +lat_0=0 +lon_0=146 +lat_1=-13.1666666666667 +lat_2=-25.8333333333333
+    ## +x_0=0 +y_0=0 +ellps=GRS80 +units=m +no_defs
+
+    ## OGR data source with driver: ESRI Shapefile 
+    ## Source: "C:\spmodels\streamviz\gisdata\maleny", layer: "catchment"
+    ## with 1 features
+    ## It has 2 fields
+    ## Integer64 fields read as strings:  Id gridcode
+
+``` r
+dem <- raster("gisdata/maleny/dem.tif")
+```
+
+    ## Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO"): Discarded
+    ## datum Unknown based on GRS80 ellipsoid in CRS definition
+
 ### Doing the most with the least
 
 Stream network where the width is proportional to some downstream
@@ -81,6 +101,32 @@ ggplot() +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+### Other spatial layers
+
+Digital elevation models (dem.tif) layer.
+
+``` r
+plot(dem)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+Catchments/watersheds (catchment.shp). We love ugly colour palettes.
+
+``` r
+ggplot() +
+  layer_spatial(catchment, fill = "aquamarine", colour = "coral", size = 1.5) +
+  layer_spatial(streams, 
+                aes(size = AreaAFV), 
+                colour = "navy") +
+  layer_spatial(sites, colour = "hotpink")+
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ## Yankee-Fork Streams
 
@@ -142,7 +188,7 @@ ggplot() +
   theme_classic()
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ### Watershed study area with observation sites
 
@@ -169,4 +215,4 @@ ggplot() +
         axis.text.y = element_text())
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
