@@ -8,14 +8,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 ```
-
-# Stream Visualisation
 
 Reference for some nice streams (subjective). Everything works for R4.0.2 and proj6. Important packages:
 
-```{r}
+```{r pkg}
 library(rgdal)
 library(raster)
 library(tidyverse)

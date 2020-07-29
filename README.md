@@ -3,53 +3,17 @@ Stream Visualisation
 Grace Heron
 29/07/2020
 
-# Stream Visualisation
-
 Reference for some nice streams (subjective). Everything works for
 R4.0.2 and proj6. Important packages:
 
 ``` r
 library(rgdal)
-```
-
-    ## Loading required package: sp
-
-    ## rgdal: version: 1.5-12, (SVN revision 1018)
-    ## Geospatial Data Abstraction Library extensions to R successfully loaded
-    ## Loaded GDAL runtime: GDAL 3.0.4, released 2020/01/28
-    ## Path to GDAL shared files: C:/Users/Grace/Documents/R/win-library/4.0/rgdal/gdal
-    ## GDAL binary built with GEOS: TRUE 
-    ## Loaded PROJ runtime: Rel. 6.3.1, February 10th, 2020, [PJ_VERSION: 631]
-    ## Path to PROJ shared files: C:/Users/Grace/Documents/R/win-library/4.0/rgdal/proj
-    ## Linking to sp version:1.4-2
-    ## To mute warnings of possible GDAL/OSR exportToProj4() degradation,
-    ## use options("rgdal_show_exportToProj4_warnings"="none") before loading rgdal.
-
-``` r
 library(raster)
 library(tidyverse)
-```
-
-    ## -- Attaching packages --------------------------------------------- tidyverse 1.3.0 --
-
-    ## v ggplot2 3.3.2     v purrr   0.3.4
-    ## v tibble  3.0.3     v dplyr   1.0.0
-    ## v tidyr   1.1.0     v stringr 1.4.0
-    ## v readr   1.3.1     v forcats 0.5.0
-
-    ## -- Conflicts ------------------------------------------------ tidyverse_conflicts() --
-    ## x tidyr::extract() masks raster::extract()
-    ## x dplyr::filter()  masks stats::filter()
-    ## x dplyr::lag()     masks stats::lag()
-    ## x dplyr::select()  masks raster::select()
-
-``` r
 library(ggspatial)
 library(ggrepel)
 library(SSN)
 ```
-
-    ## Loading required package: RSQLite
 
 ## Yankee-Fork Streams
 
@@ -103,4 +67,4 @@ ggplot() +
         axis.text.y = element_text())
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
