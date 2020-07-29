@@ -26,14 +26,18 @@ library(SSN)
 ## Yankee-Fork Streams
 
 Yankee-Fork, USA streams with sites, prediction sites and watershed layers.
+
 ```{r yf1, message = FALSE}
 sites <- readOGR("gisdata/yankeefork","sites")
 preds <- readOGR("gisdata/yankeefork", "preds")
 watershed <- readOGR("gisdata/yankeefork/watershed.shp", "watershed")
 streams <- readOGR("gisdata/yankeefork","streams")
 ```
+
 ### Simple Stream Network
+
 Stream network where the width is proportional to some downstream accumulative value.  
+
 ```{r}
 ggplot() +
   layer_spatial(streams, 
@@ -46,7 +50,9 @@ ggplot() +
 
 
 ### Watershed study area with observation sites
+
 Getting slightly fancy. Now add in a watershed and observation sites. Also an annotation arrow for flavour.
+
 ```{r}
 ggplot() +
   layer_spatial(watershed, fill = "gray60", alpha = 0.5, colour = "gray40") +
@@ -66,7 +72,6 @@ ggplot() +
         axis.title.x=element_blank(),
         axis.text.y = element_text())
 ```
-
 
 ## Maleny Streams 
 
