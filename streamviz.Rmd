@@ -1,0 +1,16 @@
+---
+title: "Stream Visualisation"
+author: "Grace Heron"
+date: "29/07/2020"
+output: 
+    github_document:
+        html_preview: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+

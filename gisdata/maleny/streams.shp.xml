@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Bureau of Meteorology, Information Systems and Services Division</origin>
+				<title>AHGF Network Stream - V3.0.5 Beta</title>
+				<geoform>vector digital data</geoform>
+				<onlink>http://www.bom.gov.au/water/geofabric/download.shtml</onlink>
+				<pubdate>REQUIRED: The date when the data set is published or otherwise made available for release.</pubdate><ftname Sync="TRUE">AHGFNetworkStream</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>The AHGFNetworkStreams are derived from the ANUDEM (version 5.3.0 3 November 2016) derived raster streams, and vectorised to be usable in vector line feature format. They are initially informed and modified by the coincident locations of AusHydro V2 Watercourse feature class.  The features have been organized into specific Feature Class subtypes based upon both the inputs from the AusHydro V2 Watercourse feature class and their behaviour within the AHGF stream network relationships.
+NetworkFlowSegment:corresponds to an existing blueline stream from AusHydro Watercourses
+NetworkArtificialFlowSegment: corresponds to a stream flow "connector" from AusHydro V2 Watercourses.  These are additional stream segments that represent logcial stream flow direction when compared to the AHGFMappedStreams.
+NetworkWaterAreaSegment: these are logical stream flow connectors through AHGFWaterbodies.
+All of these features participate in the connected stream flow topology.</abstract>
+			<purpose>To support the definition of the AGHFCatchment boundaries for the Geofabric and provide a spatial framework for analysis and assessment of streams and their catchments</purpose>
+			<supplinf>Vector lines derived from a regular 1 second grid delineating a fully connected and directed stream network for Australia. The network was derived by tracing the surface flow pathways coded by a multi-flow extension of the SRTM 1 second Flow Direction Grid Version 3.1, associated with the 1 SEC SRTM DEM-S.
+The stream network represents the AusHydro V2 watercourse line features, generalised to the 1 second DEM grid resolution consistent with the flow pathways defined in the flow direction grid. It adds DEM connectors where there are breaks in the AusHydro V2 Watercourse lines to provide a fully connected network suitable for network tracing and other analytical uses. This layer also relates to the AHGFCatchments through a shared segment identifier. The sub-catchment areas draining to each of the segments (links) in this layer form the lowest level sub-division of the catchments while the topological relationships among the streams provide the basis for assignment of the Pfafstetter coding associated with each of the catchment level units.
+
+</supplinf>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>25/01/2019</caldate></sngdate>
+			</timeinfo>
+			<current>publication date</current>
+		</timeperd>
+		<status>
+			<progress>In work</progress>
+			<update>As required by version management</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>
+113.333750</westbc>
+				<eastbc>
+153.628750</eastbc>
+				<northbc>
+-9.236250</northbc>
+				<southbc>
+-43.628750</southbc>
+			</bounding>
+			<lboundng><leftbc Sync="TRUE">113.333750</leftbc><rightbc Sync="TRUE">153.628750</rightbc><bottombc Sync="TRUE">-43.628750</bottombc><topbc Sync="TRUE">-9.236250</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>REQUIRED: Reference to a formally registered thesaurus or a similar authoritative source of theme keywords.</themekt>
+				<themekey>rivers; streams; AHGFcatchment boundaries</themekey>
+			</theme>
+		</keywords>
+		<accconst>Licenced for use under Creative Commons Australia Attribution</accconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Bureau of Meteorology, Information Systems and Services Division</cntorg>
+					<cntper>Geospatial Data &amp; Services</cntper>
+				</cntorgp>
+				<cntemail>ahgf@bom.gov.au</cntemail>
+			</cntinfo>
+		</ptcontac>
+		<native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.3000</native>
+		<useconst>Licenced for use under Creative Commons Australia Attribution</useconst><datacred>We request attribution as © Commonwealth of Australia (Bureau of Meteorology) 2019</datacred><natvform Sync="TRUE">File Geodatabase Feature Class</natvform></idinfo>
+	<dataqual>
+		<lineage>
+			<procstep>
+				<procdesc>Developed with custom scripts and procedures</procdesc>
+			</procstep><procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">F:\DATA_SHARE\egis01_share\Geofabric_V3\Geofabric_V3_0\National_Beta_V3_0_5\Public\GDB\Metadata\Feature_Class_Level\SH_Network\AHGFNetworkStream.xml</srcused><procdate Sync="TRUE">20190123</procdate><proctime Sync="TRUE">10193300</proctime></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Vector</direct>
+		<ptvctinf><esriterm Name="edges"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom code="3" Sync="TRUE"></efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">0</efeacnt><spindex Sync="TRUE">FALSE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf></spdoinfo>
+	<spref>
+		<horizsys>
+			<geodetic>
+				<horizdn>D_GDA_1994</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137.000000</semiaxis>
+				<denflat>298.257222</denflat>
+			</geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_GDA_1994</geogcsn></cordsysn></horizsys>
+		<vertdef>
+			<altsys>
+				<altres>0.000010</altres>
+				<altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+			</altsys>
+		</vertdef>
+	</spref>
+	<eainfo>
+		<detailed Name="edges">
+			<enttyp>
+				<enttypl>
+AHGFNetworkStream</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">0</enttypc></enttyp>
+			<attr>
+				<attrlabl>Shape</attrlabl>
+				<attrdef>Feature geometry.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>HydroID</attrlabl>
+				<attrdef>Feature identifier, unique across all geodatabases within an AHGF release.</attrdef>
+				<attalias Sync="TRUE">HydroID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>AHGFFType</attrlabl>
+				<attrdef>Feature type within the AHGF Data Model (e.g. 1 : AHGFNetworkStream).</attrdef>
+				<attalias Sync="TRUE">AHGFFType</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">Esri</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr>
+				<attrlabl>Name</attrlabl>
+				<attrdef>Name associated the individual feature (e.g. Laura Creek).</attrdef>
+				<attalias Sync="TRUE">Name</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">60</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>Hierarchy</attrlabl>
+				<attrdef>Importance of associated watercourse (i.e. Major/Minor).</attrdef>
+				<attalias Sync="TRUE">Hierarchy</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">14</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>Perennial</attrlabl>
+				<attrdef>Code indicating the permanence of the associated water feature (e.g. Perennial).</attrdef>
+				<attalias Sync="TRUE">Perennial</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">14</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>AusHydroID</attrlabl>
+				<attrdef>AusHydro identifier - used to relate equivalent feature in AHGFMappedStream.</attrdef>
+				<attalias Sync="TRUE">AusHydroID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>AusHydroEr</attrlabl>
+				<attrdef>AusHydro Error code, indicating match type with AHGFMappedStream feature.</attrdef>
+				<attalias Sync="TRUE">AusHydroEr</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>SEGMENTNO</attrlabl>
+				<attrdef>Identifier used to relate equivalent raster stream segment in input data source.</attrdef>
+				<attalias Sync="TRUE">SegmentNo</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>NextDownID</attrlabl>
+				<attrdef>The HydroID for the next downstream stream network segment (empty in V1.0).</attrdef>
+				<attalias Sync="TRUE">NextDownID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">From_Node</attrlabl><attalias Sync="TRUE">From_Node</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale><attrdef>The HydroID of the network node coincidental with the start of the stream segment.</attrdef></attr><attr><attrlabl Sync="TRUE">To_Node</attrlabl><attalias Sync="TRUE">To_Node</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale><attrdef>The HydroID of the network node coincidental with the end of the stream segment.</attrdef></attr><attr>
+				<attrlabl>DrainID</attrlabl>
+				<attrdef>The HydroID for the associated catchment feature in AHGFCatchment. Note: Normally each stream segment drains the area of a single catchment feature, however, in a relatively small number of cases a single stream segment can drain two or more catchments. This is an artefact of a raster to vector conversion process and caused by a lack of an intervening raster grid cell between neighbouring stream confluences.</attrdef>
+				<attalias Sync="TRUE">DrainID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>Enabled</attrlabl>
+				<attrdef>Flag indicating whether the feature is enabled or disabled in the logical network.</attrdef>
+				<attalias Sync="TRUE">Enabled</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>FlowDir</attrlabl>
+				<attrdef>Code for the direction of flow in relation to digitized direction.</attrdef>
+				<attalias Sync="TRUE">FlowDir</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>SrcFCName</attrlabl>
+				<attrdef>Feature Class Name from the input data source (e.g. Reservoirs).</attrdef>
+				<attalias Sync="TRUE">SrcFCName</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">25</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>SrcFType</attrlabl>
+				<attrdef>Feature type from the input data source (e.g. TownRuralStorage).</attrdef>
+				<attalias Sync="TRUE">SrcFType</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">32</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>SrcType</attrlabl>
+				<attrdef>Feature sub-type (numeric code) from the input data source (e.g. 2).</attrdef>
+				<attalias Sync="TRUE">SrcType</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>SourceID</attrlabl>
+				<attrdef>Unique identifier for individual feature in the input data source (e.g. 3023726).</attrdef>
+				<attalias Sync="TRUE">SourceID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>FeatRel</attrlabl>
+				<attrdef>Reliability date of spatial object. Adjusted during spatial change/verification.</attrdef>
+				<attalias Sync="TRUE">FeatRel</attalias><attrtype Sync="TRUE">Date</attrtype><attwidth Sync="TRUE">8</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>FSource</attrlabl>
+				<attrdef>Name of agency that originally captured the spatial object.</attrdef>
+				<attalias Sync="TRUE">FSource</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">25</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>AttrRel</attrlabl>
+				<attrdef>Reliability date of attribute object. Adjusted during attribute change/verification.</attrdef>
+				<attalias Sync="TRUE">AttrRel</attalias><attrtype Sync="TRUE">Date</attrtype><attwidth Sync="TRUE">8</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>AttrSource</attrlabl>
+				<attrdef>Name of agency that originally captured the attribute object.</attrdef>
+				<attalias Sync="TRUE">AttrSource</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">25</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>PlanAcc</attrlabl>
+				<attrdef>Standard deviation of the horizontal positional accuracy in metres (e.g. 100).</attrdef>
+				<attalias Sync="TRUE">PlanAcc</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>Symbol</attrlabl>
+				<attrdef>Symbol number for feature used in Geoscience Australia?s GEODATA product.</attrdef>
+				<attalias Sync="TRUE">Symbol</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>TextNote</attrlabl>
+				<attrdef>Text note to accompany the feature.</attrdef>
+				<attalias Sync="TRUE">TextNote</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">50</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">UpstrGeoLn</attrlabl><attalias Sync="TRUE">UpstrGeoLn</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef>Combined geodesic length of contributing upstream AHGFNetworkStream features (incl. segment).</attrdef></attr><attr><attrlabl Sync="TRUE">UpstrDArea</attrlabl><attalias Sync="TRUE">UpstrDArea</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef>Combined albers area (m²) of contributing upstream AHGFCatchment features (incl. segment).</attrdef></attr><attr>
+				<attrlabl>GeodesLen</attrlabl>
+				<attalias Sync="TRUE">GeodesLen</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef>Geodesic length of feature calculated using Vincenty's Inverse Method (metres).</attrdef></attr>
+			<subtype><stname Sync="TRUE">NetworkWaterAreaSegment</stname><stcode Sync="TRUE">3</stcode><stfield><stfldnm Sync="TRUE">AHGFFType</stfldnm><stflddv Sync="TRUE">3</stflddv><stflddd><domname Sync="TRUE">AHGFNetworkStreamType</domname><domdesc Sync="TRUE">Types of network (terrain based) stream segments.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">Integer</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Hierarchy</stfldnm><stflddd><domname Sync="TRUE">AHGFHierarchy</domname><domdesc Sync="TRUE">Importance of associated water feature.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">String</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Perennial</stfldnm><stflddd><domname Sync="TRUE">AHGFPerenniality</domname><domdesc Sync="TRUE">Water feature perenniality.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">String</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Enabled</stfldnm><stflddd><domname Sync="TRUE">EnabledDomain</domname><domdesc Sync="TRUE">Flag indicating whether a feature allows flow or is blocked.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">SmallInteger</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">FlowDir</stfldnm><stflddd><domname Sync="TRUE">HydroFlowDirections</domname><domdesc Sync="TRUE">Flow directions in relation to the digitised direction.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">Integer</domfldtp></stflddd></stfield></subtype><subtype><stname Sync="TRUE">NetworkArtificialFlowSegment</stname><stcode Sync="TRUE">2</stcode><stfield><stfldnm Sync="TRUE">AHGFFType</stfldnm><stflddv Sync="TRUE">2</stflddv><stflddd><domname Sync="TRUE">AHGFNetworkStreamType</domname><domdesc Sync="TRUE">Types of network (terrain based) stream segments.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">Integer</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Hierarchy</stfldnm><stflddd><domname Sync="TRUE">AHGFHierarchy</domname><domdesc Sync="TRUE">Importance of associated water feature.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">String</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Perennial</stfldnm><stflddd><domname Sync="TRUE">AHGFPerenniality</domname><domdesc Sync="TRUE">Water feature perenniality.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">String</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Enabled</stfldnm><stflddd><domname Sync="TRUE">EnabledDomain</domname><domdesc Sync="TRUE">Flag indicating whether a feature allows flow or is blocked.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">SmallInteger</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">FlowDir</stfldnm><stflddd><domname Sync="TRUE">HydroFlowDirections</domname><domdesc Sync="TRUE">Flow directions in relation to the digitised direction.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">Integer</domfldtp></stflddd></stfield></subtype><subtype><stname Sync="TRUE">NetworkFlowSegment</stname><stcode Sync="TRUE">1</stcode><stfield><stfldnm Sync="TRUE">AHGFFType</stfldnm><stflddv Sync="TRUE">1</stflddv><stflddd><domname Sync="TRUE">AHGFNetworkStreamType</domname><domdesc Sync="TRUE">Types of network (terrain based) stream segments.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">Integer</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Hierarchy</stfldnm><stflddd><domname Sync="TRUE">AHGFHierarchy</domname><domdesc Sync="TRUE">Importance of associated water feature.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">String</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Perennial</stfldnm><stflddd><domname Sync="TRUE">AHGFPerenniality</domname><domdesc Sync="TRUE">Water feature perenniality.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">String</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">Enabled</stfldnm><stflddd><domname Sync="TRUE">EnabledDomain</domname><domdesc Sync="TRUE">Flag indicating whether a feature allows flow or is blocked.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">SmallInteger</domfldtp></stflddd></stfield><stfield><stfldnm Sync="TRUE">FlowDir</stfldnm><stflddd><domname Sync="TRUE">HydroFlowDirections</domname><domdesc Sync="TRUE">Flow directions in relation to the digitised direction.</domdesc><domtype Sync="TRUE">Coded Value</domtype><mrgtype Sync="TRUE">Default value</mrgtype><splttype Sync="TRUE">Default value</splttype><domowner Sync="TRUE"></domowner><domfldtp Sync="TRUE">Integer</domfldtp></stflddd></stfield></subtype><attr><attrlabl Sync="TRUE">ConCatID</attrlabl><attalias Sync="TRUE">ConCatID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">StrOutlet</attrlabl><attalias Sync="TRUE">StrOutlet</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Shape_Leng</attrlabl><attalias Sync="TRUE">Shape_Leng</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Shape_Le_1</attrlabl><attalias Sync="TRUE">Shape_Le_1</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">rid</attrlabl><attalias Sync="TRUE">rid</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">upDist</attrlabl><attalias Sync="TRUE">upDist</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Headwater</attrlabl><attalias Sync="TRUE">Headwater</attalias><attrtype Sync="TRUE">Single</attrtype><attwidth Sync="TRUE">13</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Shreve</attrlabl><attalias Sync="TRUE">Shreve</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">AreaPI</attrlabl><attalias Sync="TRUE">AreaPI</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">AreaAFV</attrlabl><attalias Sync="TRUE">AreaAFV</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">netID</attrlabl><attalias Sync="TRUE">netID</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Length</attrlabl><attalias Sync="TRUE">Length</attalias><attrtype Sync="TRUE">Single</attrtype><attwidth Sync="TRUE">13</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr></detailed>
+		<detailed Name="CatchmentDrainsToSegment">
+			<enttyp>
+				<enttypl>
+CatchmentDrainsToSegment</enttypl>
+				<enttypt Sync="TRUE">Relationship</enttypt></enttyp>
+		</detailed>
+	</eainfo>
+	<distinfo>
+		<resdesc>Downloadable Data</resdesc>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize>519.352</transize>
+				</digtinfo>
+			</digform>
+		</stdorder>
+	</distinfo>
+	<metainfo>
+		<metd>20190125</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Bureau of Meteorology, Information Systems and Services Division</cntorg>
+					<cntper>Geospatial Data &amp; Services</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>REQUIRED: The mailing and/or physical address for the organization or individual.</addrtype><city>REQUIRED: The city of the address.</city><state>REQUIRED: The state or province of the address.</state><postal>REQUIRED: The ZIP or other postal code of the address.</postal></cntaddr>
+				<cntemail>ahgf@bom.gov.au</cntemail>
+				<cntvoice>REQUIRED: The telephone number by which individuals can speak to the organization or individual.</cntvoice></cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<langmeta Sync="TRUE">en</langmeta></metainfo>
+	<Esri><CreaDate>20200729</CreaDate><CreaTime>16075600</CreaTime><SyncOnce>FALSE</SyncOnce><ModDate>20191011</ModDate><ModTime>13362700</ModTime><SyncDate>20191011</SyncDate><SyncTime>13362700</SyncTime><DataProperties><itemProps><itemName Sync="TRUE">edges</itemName><imsContentType Sync="TRUE">002</imsContentType><itemSize Sync="TRUE">0.000</itemSize><itemLocation><linkage Sync="TRUE">file://\\SEF-PA00132018\C$\Users\herong\OneDrive - Queensland University of Technology\Shoshone-Bannock\temp\maleny\malenystrms</linkage><protocol Sync="TRUE">Local Area Network</protocol></itemLocation></itemProps><coordRef><type Sync="TRUE">Projected</type><geogcsn Sync="TRUE">GCS_GDA_1994</geogcsn><csUnits Sync="TRUE">Linear Unit: Meter (1.000000)</csUnits><peXml Sync="TRUE">&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.6'&gt;&lt;WKT&gt;PROJCS[&amp;quot;GDA_1994_MGA_Zone_56&amp;quot;,GEOGCS[&amp;quot;GCS_GDA_1994&amp;quot;,DATUM[&amp;quot;D_GDA_1994&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Transverse_Mercator&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,500000.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,10000000.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,153.0],PARAMETER[&amp;quot;Scale_Factor&amp;quot;,0.9996],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,28356]]&lt;/WKT&gt;&lt;XOrigin&gt;-5120900&lt;/XOrigin&gt;&lt;YOrigin&gt;1900&lt;/YOrigin&gt;&lt;XYScale&gt;450445547.3910538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;28356&lt;/WKID&gt;&lt;LatestWKID&gt;28356&lt;/LatestWKID&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml><projcsn Sync="TRUE">GDA_1994_MGA_Zone_56</projcsn></coordRef><lineage><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Analysis Tools.tbx\Clip" Date="20190912" Time="113533">Clip "Geofabric Surface Network - National V3.0.5 Beta\AHGFNetworkStream\AHGFNetworkStream - All" maleny_catchment C:\spmodels\maleny_map\maleny_streams.shp "100 Meters"</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\Project" Date="20191007" Time="163115">Project maleny_streams C:\Users\pearsea\Dropbox\maleny_gis\streams_proj.shp PROJCS['GDA_1994_MGA_Zone_56',GEOGCS['GCS_GDA_1994',DATUM['D_GDA_1994',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',500000.0],PARAMETER['False_Northing',10000000.0],PARAMETER['Central_Meridian',153.0],PARAMETER['Scale_Factor',0.9996],PARAMETER['Latitude_Of_Origin',0.0],UNIT['Meter',1.0]] # GEOGCS['GCS_GDA_1994',DATUM['D_GDA_1994',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]] NO_PRESERVE_SHAPE # NO_VERTICAL</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyFeatures" Date="20191011" Time="132332">CopyFeatures C:\Users\pearsea\Dropbox\FlowProject\correc2.shp C:\Users\pearsea\Dropbox\FlowProject\lsn6\lsn6.mdb\edges # 0 0 0</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="132332">AddField C:\Users\pearsea\Dropbox\FlowProject\lsn6\lsn6.mdb\edges rid LONG 12 12 # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="132333">CalculateField C:\Users\pearsea\Dropbox\FlowProject\lsn6\lsn6.mdb\edges rid "[OBJECTID] - 1" VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="132940">AddField C:\Users\pearsea\Dropbox\FlowProject\lsn6\lsn6.mdb\edges upDist DOUBLE # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="132941">CalculateField edgeLyr upDist [Shape_Length] VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="133038">CalculateField edges Headwater 1 VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="133058">AddField edges ACCD DOUBLE # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="133058">CalculateField edgelyr ACCD [Headwater] VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="133122">CalculateField edges Headwater 0 VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="133145">AddField edges Shreve DOUBLE # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="133145">CalculateField edgelyr Shreve [Headwater] VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="133209">AddField edges AreaPI DOUBLE # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="133331">AddField edges AreaAFV DOUBLE # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="133331">CalculateField edgeLyr AreaAFV [AreaPI] VB #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="133619">AddField edgeLyr netID LONG # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\AddField" Date="20191011" Time="133627">AddField C:/Users/pearsea/Dropbox/FlowProject/lsn6/lsn6.mdb\edges Length FLOAT # # # # NULLABLE NON_REQUIRED #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20191011" Time="133627">CalculateField C:/Users/pearsea/Dropbox/FlowProject/lsn6/lsn6.mdb\edges Length float(!SHAPE.LENGTH!) PYTHON #</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyFeatures" Date="20191011" Time="133627">CopyFeatures C:/Users/pearsea/Dropbox/FlowProject/lsn6/lsn6.mdb\edges C:\Users\pearsea\Dropbox\FlowProject\lsn6\lsn6.ssn\edges.shp # 0 0 0</Process><Process ToolSource="c:\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20200713" Time="132036">CalculateField edges rid "[FID] - 1" VB #</Process></lineage><copyHistory><copy source="C:\Users\herong\OneDrive - Queensland University of Technology\Shoshone-Bannock\temp\malenystrms" dest="\\SEF-PA00132018\C$\Users\herong\OneDrive - Queensland University of Technology\Shoshone-Bannock\temp\maleny\malenystrms" date="20200729" time="16121500"></copy></copyHistory></DataProperties><ArcGISFormat>1.0</ArcGISFormat></Esri><distInfo><distributor><distorTran><onLineSrc></onLineSrc></distorTran><distorFormat><formatName Sync="TRUE">File Geodatabase Feature Class</formatName></distorFormat></distributor><distFormat><formatName Sync="TRUE">Shapefile</formatName></distFormat><distTranOps><transSize Sync="TRUE">0.000</transSize></distTranOps></distInfo><mdDateSt Sync="TRUE">20191011</mdDateSt><dataIdInfo><envirDesc Sync="TRUE"> Version 6.2 (Build 9200) ; Esri ArcGIS 10.6.0.8321</envirDesc><dataLang><languageCode Sync="TRUE" value="eng"></languageCode><countryCode value="AUS" Sync="TRUE"></countryCode></dataLang><idCitation><resTitle Sync="TRUE">edges</resTitle><presForm><PresFormCd value="005" Sync="TRUE"></PresFormCd></presForm></idCitation><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">113.33375</westBL><eastBL Sync="TRUE">153.62875</eastBL><northBL Sync="TRUE">-9.23625</northBL><southBL Sync="TRUE">-43.62875</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">113.33375</westBL><eastBL Sync="TRUE">153.62875</eastBL><northBL Sync="TRUE">-9.23625</northBL><southBL Sync="TRUE">-43.62875</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox><spatRpType><SpatRepTypCd value="001" Sync="TRUE"></SpatRepTypCd></spatRpType></dataIdInfo><mdLang><languageCode Sync="TRUE" value="eng"></languageCode><countryCode value="AUS" Sync="TRUE"></countryCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE" code="28356">GCS_GDA_1994</identCode><idCodeSpace Sync="TRUE">EPSG</idCodeSpace><idVersion Sync="TRUE">2.1(3.0.1)</idVersion></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><geometObjs Name="edges"><geoObjTyp><GeoObjTypCd value="002" Sync="TRUE"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">0</geoObjCnt></geometObjs><topLvl><TopoLevCd value="001" Sync="TRUE"></TopoLevCd></topLvl></VectSpatRep></spatRepInfo></metadata>
