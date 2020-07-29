@@ -8,12 +8,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Reference for some nice streams (subjective). Everything works for R4.0.2 and proj6. Important packages:
 
-```{r pkg}
+```{r pkg, message = FALSE}
 library(rgdal)
 library(raster)
 library(tidyverse)
@@ -25,11 +25,29 @@ library(SSN)
 
 ## Yankee-Fork Streams
 
-```{r}
+Yankee-Fork, USA streams with sites, prediction sites and watershed layers.
+```{r yf1, message = FALSE}
 sites <- readOGR("gisdata/yankeefork","sites")
+preds <- readOGR("gisdata/yankeefork", "preds")
 watershed <- readOGR("gisdata/yankeefork/watershed.shp", "watershed")
 streams <- readOGR("gisdata/yankeefork","streams")
+```
+### Simple Stream Network
+Stream network where the width is proportional to some downstream accumulative value.  
+```{r}
+ggplot() +
+  layer_spatial(streams, 
+                aes(size = afvArea), 
+                colour = "lightskyblue") +
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
 
+
+### Watershed study area with observation sites
+Getting slightly fancy. Now add in a watershed and observation sites. Also an annotation arrow for flavour.
+```{r}
 ggplot() +
   layer_spatial(watershed, fill = "gray60", alpha = 0.5, colour = "gray40") +
   layer_spatial(streams, aes(size = afvArea), colour = "gray50") +
@@ -50,4 +68,5 @@ ggplot() +
 ```
 
 
+## Maleny Streams 
 

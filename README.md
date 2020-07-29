@@ -17,6 +17,9 @@ library(SSN)
 
 ## Yankee-Fork Streams
 
+Yankee-Fork, USA streams with sites, prediction sites and watershed
+layers.
+
 ``` r
 sites <- readOGR("gisdata/yankeefork","sites")
 ```
@@ -26,6 +29,16 @@ sites <- readOGR("gisdata/yankeefork","sites")
     ## with 208 features
     ## It has 10 fields
     ## Integer64 fields read as strings:  VisitID VisitYr
+
+``` r
+preds <- readOGR("gisdata/yankeefork", "preds")
+```
+
+    ## OGR data source with driver: ESRI Shapefile 
+    ## Source: "C:\spmodels\streamviz\gisdata\yankeefork", layer: "preds"
+    ## with 276 features
+    ## It has 29 fields
+    ## Integer64 fields read as strings:  COMID FCODE DUP_COMID StreamOrde NEAR_FID
 
 ``` r
 watershed <- readOGR("gisdata/yankeefork/watershed.shp", "watershed")
@@ -47,6 +60,28 @@ streams <- readOGR("gisdata/yankeefork","streams")
     ## It has 32 fields
     ## Integer64 fields read as strings:  COMID FCODE DUP_COMID StreamOrde reachID rid netID
 
+### Simple Stream Network
+
+Stream network where the width is proportional to some downstream
+accumulative value.
+
+``` r
+ggplot() +
+  layer_spatial(streams, 
+                aes(size = afvArea), 
+                colour = "lightskyblue") +
+  coord_sf() + 
+  scale_size(range = c(0, 2), guide = FALSE) +
+  theme_classic()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
+### Watershed study area with observation sites
+
+Getting slightly fancy. Now add in a watershed and observation sites.
+Also an annotation arrow for flavour.
+
 ``` r
 ggplot() +
   layer_spatial(watershed, fill = "gray60", alpha = 0.5, colour = "gray40") +
@@ -67,4 +102,6 @@ ggplot() +
         axis.text.y = element_text())
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+## Maleny Streams
