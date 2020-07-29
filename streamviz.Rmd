@@ -11,6 +11,45 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Stream Visualisation
+
+Reference for some nice streams (subjective). Everything works for R4.0.2 and proj6. Important packages:
+
+```{r}
+library(rgdal)
+library(raster)
+library(tidyverse)
+library(ggspatial)
+library(ggrepel)
+library(SSN)
+```
+
+
+## Yankee-Fork Streams
+
+```{r}
+sites <- readOGR("gisdata/yankeefork","sites")
+watershed <- readOGR("gisdata/yankeefork/watershed.shp", "watershed")
+streams <- readOGR("gisdata/yankeefork","streams")
+
+ggplot() +
+  layer_spatial(watershed, fill = "gray60", alpha = 0.5, colour = "gray40") +
+  layer_spatial(streams, aes(size = afvArea), colour = "gray50") +
+  layer_spatial(sites, colour = "coral", pch = 1, cex = 2, show.legend = TRUE)+
+  coord_sf() + 
+  labs(x = "Longitude", y = "Latitude") + 
+  annotation_north_arrow(height = unit(0.3, "in"),
+                         width = unit(0.3, "in"), # GRID NORTH? OR TRUE NORTH?
+                         which_north = "grid", 
+                         location = "bl") +
+  scale_size(range = c(0, 2), guide = FALSE) +
+  scale_shape_manual(values=c(25, 24)) + 
+  theme_bw() + 
+  theme(legend.title = element_blank(),
+        axis.title.y=element_blank(),
+        axis.title.x=element_blank(),
+        axis.text.y = element_text())
+```
+
 
 
